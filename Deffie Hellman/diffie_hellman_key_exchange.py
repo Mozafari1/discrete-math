@@ -1,4 +1,5 @@
-import random    
+import random   
+import math 
 def private_key (prime_number, prim_root):
     n = 1
     Alice_rand_num = random.randint(n, prime_number) # Alice_ran_num <prime_number -n 
@@ -10,10 +11,11 @@ def private_key (prime_number, prim_root):
     #If the third argument (z) is given, it returns x to the power of y modulus z, i.e. pow(x, y) % z
     print("Key_Alice : %s"% (pow(key_Bod, Alice_rand_num, prime_number)))
     print("key_Bod   : %s"%(pow(key_Alice, Bob_rand_num, prime_number)))
-
+ 
 if __name__ == "__main__":
-    pn = random.randint(2934845,35767465)
-    pr = random.randint(2643766,568789678)
+    # The problem is that this is very slow to generate amount of private key for user 
+    pn = random.randint(500,3776)
+    pr = random.randint(700,4578)
     pn_pow = pow(pr, pn)
     pr_pow = pow(pn,pr)
     prime_number = pn_pow
