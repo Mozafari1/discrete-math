@@ -6,6 +6,8 @@ def private_key (prime_number, prim_root):
     # mathematical formula (prim_root ** Alice_rand_num mod prime_number)
     key_Alice = pow(prim_root, Alice_rand_num, prime_number) 
     key_Bod = pow(prim_root, Bob_rand_num, prime_number)
+    #Python number method pow() returns x to the power of y. 
+    #If the third argument (z) is given, it returns x to the power of y modulus z, i.e. pow(x, y) % z
     print("Key_Alice : %s"% (pow(key_Bod, Alice_rand_num, prime_number)))
     print("key_Bod   : %s"%(pow(key_Alice, Bob_rand_num, prime_number)))
 
